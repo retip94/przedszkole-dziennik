@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         przedszkole
+// @name         przedszkole32
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Przedszkole 32
-// @author       You
+// @author       Piotr Piekielny
 // @match        http://koninsp4.vot.pl/wydarzenia/*
 // @require  http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 // @require  https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js
@@ -11,9 +11,12 @@
 
 (function() {
   'use strict';
+  document.body.style.float = "right";
+  document.documentElement.style.height = "100%";
 
-  $("body").append ( `
-    <div id="retip-nav" style="position:fixed; left: 0; top: 0; z-index: 1; width:20%; height: 100%; padding:20px; background: #69d8ff;">
+
+  $("html").append ( `
+    <div id="retip-nav" style="float: left; top: 0; z-index: 1; width:20%; height: 100%; padding:20px; background: #69d8ff;">
 				<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <div>
 					<h4>Skrypt Piotrka</h1>
@@ -37,7 +40,7 @@
             </select>
 					</div>
 					<button class="btn btn-success" id="retip-save-btn">Zapisz</button>
-					</br></br></br></br></br></br></br>
+					</br></br></br></br>
 					<p>Linki do kreatorów zajęć:</p>
 					<a class="btn btn-warning" href="http://koninsp4.vot.pl/wydarzenia/create">Zaplanuj zajęcia indywidualne</a></br></br>
 					<a class="btn btn-warning" href="http://koninsp4.vot.pl/wydarzenia/creategroupevent">Zaplanuj zajęcia grupowe</a></br>
@@ -143,7 +146,7 @@
   });
 
 
-  $('#kid').select2('open');
+  if(students_list != null) $('#kid').select2('open');
 
 
 
