@@ -12,6 +12,7 @@
 (function() {
   'use strict';
   document.body.style.float = "right";
+  document.body.style.width = "80%";
   document.documentElement.style.height = "100%";
 
 
